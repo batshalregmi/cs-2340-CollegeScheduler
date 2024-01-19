@@ -11,4 +11,8 @@
         Welcome to the College Scheduler! Put in any information below regarding your classes to get
         started!
     </string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="name">Name</string>
+    <string name="submit">Submit</string>
 </resources>
