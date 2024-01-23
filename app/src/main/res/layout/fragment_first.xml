@@ -38,7 +38,7 @@
             android:layout_marginBottom="120dp"
             android:ems="10"
             android:inputType="time"
-            android:hint="@string/time"
+            android:text="@string/time"
             app:layout_constraintBottom_toTopOf="@+id/button_submit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.952"
