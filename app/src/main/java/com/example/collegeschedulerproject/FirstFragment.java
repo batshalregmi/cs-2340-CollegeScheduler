@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.collegeschedulerproject.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
-
+//test
     private FragmentFirstBinding binding;
 
     @Override
