@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
-
         <Button
             android:id="@+id/button_first"
             android:layout_width="wrap_content"
