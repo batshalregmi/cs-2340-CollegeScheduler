@@ -8,8 +8,7 @@
     <string name="previous">Previous</string>
 
     <string name="welcome_message">
-        Welcome to the College Scheduler! Put in any information below regarding your classes to get
-        started!
+        Welcome to the College Scheduler! Click any of the following buttons to begin!
     </string>
     <string name="time">Time</string>
     <string name="date">Date</string>
