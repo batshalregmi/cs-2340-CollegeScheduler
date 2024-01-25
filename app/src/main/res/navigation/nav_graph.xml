@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.collegeschedulerproject.FirstFragment"
         android:label="@string/first_page_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/todo_list">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
