@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    tools:context=".MainPage">
 
     <TextView
         android:id="@+id/textview_first"
@@ -23,8 +23,9 @@
         android:layout_height="49dp"
         android:text="Schedule"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteY="237dp" />
 
     <Button
         android:id="@+id/assignment_button"
@@ -32,8 +33,9 @@
         android:layout_height="wrap_content"
         android:text="Assignments"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="227dp" />
+        tools:layout_editor_absoluteY="341dp" />
 
     <Button
         android:id="@+id/todo_button"
@@ -41,8 +43,9 @@
         android:layout_height="wrap_content"
         android:text="To-Do List"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="316dp" />
+        tools:layout_editor_absoluteY="432dp" />
 
     <Button
         android:id="@+id/examinfo_button"
@@ -50,8 +53,9 @@
         android:layout_height="wrap_content"
         android:text="Exam Info"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="420dp" />
+        tools:layout_editor_absoluteY="517dp" />
 
     <Button
         android:id="@+id/pushnotifs_button"
@@ -59,8 +63,9 @@
         android:layout_height="wrap_content"
         android:text="Push Notifications"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="529dp" />
+        tools:layout_editor_absoluteY="613dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
