@@ -8,11 +8,16 @@
     <string name="previous">Previous</string>
 
     <string name="welcome_message">
-        Welcome to the College Scheduler! Put in any information below regarding your classes to get
-        started!
+        Welcome to the College Scheduler! Click on any of the following buttons to start!
+    </string>
+    <string name="all_classes">
+        Input the following information to get started! Press submit for each class you want to add.
+        Click next to view all classes currently inputted.
     </string>
     <string name="time">Time</string>
     <string name="date">Date</string>
     <string name="name">Name</string>
     <string name="submit">Submit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
