@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.collegeschedulerproject.databinding.FragmentActivityMainBinding;
+
+import java.util.Objects;
+
 public class MainPage extends Fragment {
     private FragmentActivityMainBinding binding;
     @Override
