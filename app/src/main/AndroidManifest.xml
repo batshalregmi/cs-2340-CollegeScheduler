@@ -13,6 +13,23 @@
         android:theme="@style/Theme.CollegeSchedulerProject"
         tools:targetApi="31">
         <activity
+            android:name=".PushNotifications"
+            android:exported="false" />
+        <activity
+            android:name=".ExamInfo"
+            android:exported="false"
+            android:label="@string/title_activity_exam_info"
+            android:theme="@style/Theme.CollegeSchedulerProject" />
+        <activity
+            android:name=".Assignments"
+            android:exported="false" />
+        <activity
+            android:name=".Schedule"
+            android:exported="false" />
+        <activity
+            android:name=".ToDo"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
