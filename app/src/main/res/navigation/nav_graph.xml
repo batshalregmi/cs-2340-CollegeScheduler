@@ -6,32 +6,8 @@
     app:startDestination="@id/mainPage">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.collegeschedulerproject.FirstFragment"
-        android:label="@string/first_page_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.collegeschedulerproject.SecondFragment"
-        android:label="@string/second_page_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/mainPage"
         android:name="com.example.collegeschedulerproject.MainPage"
         android:label="fragment_activity_main"
-        tools:layout="@layout/fragment_activity_main" >
-        <action
-            android:id="@+id/action_mainPage_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_activity_main" />
 </navigation>
