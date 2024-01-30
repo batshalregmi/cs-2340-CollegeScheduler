@@ -10,23 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CollegeSchedulerProject"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:targetApi="31">
+
         <activity
             android:name=".PushNotifications"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ExamInfo"
             android:exported="false"
             android:label="@string/title_activity_exam_info"
-            android:theme="@style/Theme.CollegeSchedulerProject" />
+            android:parentActivityName=".MainActivity" />
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".Assignments"
             android:exported="false" />
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".Schedule"
             android:exported="false" />
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".ToDo"
             android:exported="false" />
         <activity

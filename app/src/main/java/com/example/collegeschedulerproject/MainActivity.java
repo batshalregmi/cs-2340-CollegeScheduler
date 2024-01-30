@@ -1,5 +1,6 @@
 package com.example.collegeschedulerproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.collegeschedulerproject.databinding.ActivityMainBinding;
 
 import android.widget.Button;
+import android.widget.CalendarView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,43 +35,22 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         getSupportActionBar().setTitle("College Scheduler");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Button schedule = findViewById(R.id.schedule_button);
-        schedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_schedule);
-            }
-        });
+        schedule.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Schedule.class)));
 
         Button assignments = findViewById(R.id.assignment_button);
-        assignments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_assignments);
-            }
-        });
+        assignments.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Assignments.class)));
+
         Button toDo = findViewById(R.id.todo_button);
-        toDo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_to_do);
-            }
-        });
+        toDo.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ToDo.class)));
 
         Button examInfo = findViewById(R.id.examinfo_button);
-        examInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_exam_info);
-            }
-        });
+        examInfo.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExamInfo.class)));
+
         Button pushNoti = findViewById(R.id.pushnotifs_button);
-        pushNoti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_push_notifications);
-            }
-        });
+        pushNoti.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, PushNotifications.class)));
 
     }
 }
