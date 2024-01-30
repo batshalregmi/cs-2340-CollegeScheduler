@@ -25,6 +25,7 @@ public class Schedule extends AppCompatActivity {
         ToggleButton addOrRemoveClass = findViewById(R.id.scheduleToggleButton);
         Button submit = findViewById(R.id.scheduleSubmitButton);
 
+        //TODO: CHANGE ELEMENT TO LISTVIEW
         submit.setOnClickListener(v -> {
             if (classSubject.getText().toString().equals("") || classNumber.getText().toString().equals("")) {
                 Toast.makeText(this, "Not enough information added!", Toast.LENGTH_SHORT).show();
