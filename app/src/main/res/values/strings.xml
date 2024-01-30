@@ -66,5 +66,5 @@
     <string name="selectpushnotifstring">Select whether you want to receive push notifications or not</string>
     <string name="title_activity_test2">Test2</string>
     <string name="added_classes_will_appear_here">Added classes will appear here</string>
-    <string name="subject_and_course_number">Subject and Course number</string>
+    <string name="subject_and_course_number">Subject</string>
 </resources>

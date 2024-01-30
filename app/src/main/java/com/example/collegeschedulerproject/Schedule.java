@@ -18,23 +18,50 @@ public class Schedule extends AppCompatActivity {
         setContentView(R.layout.activity_schedule);
 
         TextView classList = findViewById(R.id.scheduleListTextView);
-        EditText className = findViewById(R.id.scheduleSubjectTextBox);
+        EditText classSubject = findViewById(R.id.scheduleSubjectTextBox);
+        EditText classNumber = findViewById(R.id.scheduleCourseNumber);
         EditText classTime = findViewById(R.id.scheduleTime);
+        EditText professorName = findViewById(R.id.scheduleProfessorBox);
         ToggleButton addOrRemoveClass = findViewById(R.id.scheduleToggleButton);
         Button submit = findViewById(R.id.scheduleSubmitButton);
 
         submit.setOnClickListener(v -> {
-            if (className.getText().toString().equals("") || classTime.getText().toString().equals("")) {
-                Toast.makeText(this, "No Class/Time Added", Toast.LENGTH_SHORT).show();
+            if (classSubject.getText().toString().equals("") || classNumber.getText().toString().equals("")) {
+                Toast.makeText(this, "Not enough information added!", Toast.LENGTH_SHORT).show();
+
             } else {
                 if (!(addOrRemoveClass.isChecked())) {
-                    classList.append(className.getText().toString() + " " + classTime.getText().toString() + "\n");
+                    classList.append(classSubject.getText().toString() + " " + classNumber.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n");
                 } else {
+                    //remove entire row from classList if it matches the class subject and number
                     String classListString = classList.getText().toString();
-                    classListString = classListString.replace(className.getText().toString() + " " + classTime.getText().toString() + "\n", "");
+                    String[] classListArray = classListString.split("\n");
+                    String classToRemove = classSubject.getText().toString() + " " + classNumber.getText().toString();
+                    classListString = "";
+                    for (String s : classListArray) {
+                        if (!(s.contains(classToRemove))) {
+                            classListString += s + "\n";
+                        }
+                    }
                     classList.setText(classListString);
                 }
+                classSubject.getText().clear();
+                classNumber.getText().clear();
+                classTime.getText().clear();
+                professorName.getText().clear();
+
             }
+//            } else {
+//                if (!(addOrRemoveClass.isChecked())) {
+//                    classList.append(classSubject.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n");
+//                } else {
+//                    String classListString = classList.getText().toString();
+//                    classListString = classListString.replace(classSubject.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n", "";
+//                    classList.setText(classListString);
+//                }
+//                classSubject.getText().clear();
+//                classTime.getText().clear();
+//            }
         });
     }
 }
