@@ -62,4 +62,6 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_exam_info">ExamInfo</string>
+    <string name="previouspushnotif">Previous</string>
+    <string name="selectpushnotifstring">Select whether you want to receive push notifications or not</string>
 </resources>
