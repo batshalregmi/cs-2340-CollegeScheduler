@@ -47,25 +47,21 @@ public class Schedule extends AppCompatActivity {
 
             } else {
                 if (!(addOrRemoveClass.isChecked())) {
-                    classList.append(classSubject.getText().toString() + " " + classNumber.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n");
+                    classListView.add(classSubject.getText().toString() + " " + classNumber.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n");
+                    classListAdapter.notifyDataSetChanged();
                 } else {
                     //remove entire row from classList if it matches the class subject and number
-                    String classListString = classList.getText().toString();
-                    String[] classListArray = classListString.split("\n");
-                    String classToRemove = classSubject.getText().toString() + " " + classNumber.getText().toString();
-                    classListString = "";
-                    for (String s : classListArray) {
-                        if (!(s.contains(classToRemove))) {
-                            classListString += s + "\n";
+                    for (int i = 0; i < classListView.size(); i++) {
+                        if (classListView.get(i).contains(classSubject.getText().toString() + " " + classNumber.getText().toString())) {
+                            classListView.remove(i);
+                            classListAdapter.notifyDataSetChanged();
                         }
                     }
-                    classList.setText(classListString);
                 }
                 classSubject.getText().clear();
                 classNumber.getText().clear();
                 classTime.getText().clear();
                 professorName.getText().clear();
-
             }
         });
     }

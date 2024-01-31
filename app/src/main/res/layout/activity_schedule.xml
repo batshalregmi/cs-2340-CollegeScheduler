@@ -10,63 +10,63 @@
         android:id="@+id/scheduleSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="80dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scheduleToggleButton" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scheduleToggleButton"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTime"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ToggleButton
         android:id="@+id/scheduleToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="80dp"
         android:text="ToggleButton"
         android:textOff="Add Class"
         android:textOn="Delete Class"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scheduleSubmitButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleProfessorBox"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/scheduleSubjectTextBox"
-        android:layout_width="117dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="@string/subject_and_course_number"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/scheduleTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/scheduleProfessorBox"
+        app:layout_constraintEnd_toStartOf="@+id/scheduleCourseNumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view" />
+        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <EditText
         android:id="@+id/scheduleTime"
-        android:layout_width="203dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="128dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Time"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/scheduleSubmitButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scheduleProfessorBox" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scheduleProfessorBox"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleCourseNumber"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ListView
         android:id="@+id/schedule_list_view"
-        android:layout_width="409dp"
-        android:layout_height="348dp"
+        android:layout_width="412dp"
+        android:layout_height="311dp"
         android:hint="@string/added_classes_will_appear_here"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -77,33 +77,36 @@
 
     <EditText
         android:id="@+id/scheduleCourseNumber"
-        android:layout_width="159dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Course Number"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/scheduleTime"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/scheduleSubjectTextBox"
-        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view" />
+        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/scheduleProfessorBox"
-        android:layout_width="167dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="128dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Professor Name"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/scheduleToggleButton"
         app:layout_constraintEnd_toStartOf="@+id/scheduleTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleSubjectTextBox" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleSubjectTextBox"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
