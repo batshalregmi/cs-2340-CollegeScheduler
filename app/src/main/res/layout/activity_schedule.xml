@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleListTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view" />
 
     <EditText
         android:id="@+id/scheduleTime"
@@ -63,8 +63,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/scheduleProfessorBox" />
 
-    <TextView
-        android:id="@+id/scheduleListTextView"
+    <ListView
+        android:id="@+id/schedule_list_view"
         android:layout_width="409dp"
         android:layout_height="348dp"
         android:hint="@string/added_classes_will_appear_here"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/scheduleTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/scheduleSubjectTextBox"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleListTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/schedule_list_view" />
 
     <EditText
         android:id="@+id/scheduleProfessorBox"
