@@ -38,7 +38,7 @@ public class Schedule extends AppCompatActivity {
         submit = findViewById(R.id.scheduleSubmitButton);
 
         classListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, classListView);
-        classListView.setAdapter(classListAdapter);
+        classList.setAdapter(classListAdapter);
 
         //TODO: CHANGE ELEMENT TO LISTVIEW
         submit.setOnClickListener(v -> {
