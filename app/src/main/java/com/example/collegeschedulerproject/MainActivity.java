@@ -49,8 +49,5 @@ public class MainActivity extends AppCompatActivity {
         Button examInfo = findViewById(R.id.examinfo_button);
         examInfo.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExamInfo.class)));
 
-        Button pushNoti = findViewById(R.id.pushnotifs_button);
-        pushNoti.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, PushNotifications.class)));
-
     }
 }
