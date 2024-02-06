@@ -27,6 +27,8 @@ public class ToDo extends AppCompatActivity {
         addButton = findViewById(R.id.todo_add_button);
         textBox = findViewById(R.id.todo_edit_text);
         ToDoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, toDoList);
+        getSupportActionBar().setTitle("To-Do List");
+
 
         toDoListView.setAdapter(ToDoAdapter);
         addButton.setOnClickListener(v -> {
