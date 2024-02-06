@@ -31,7 +31,7 @@
     <string name="selectpushnotifstring">Select whether you want to receive push notifications or not</string>
     <string name="title_activity_test2">Test2</string>
     <string name="added_classes_will_appear_here">Added classes will appear here</string>
-    <string name="subject_and_course_number">Subject</string>
+    <string name="subject_and_course_number">Subject:</string>
     <string name="activty_list_hint">Enter a Task, Press a task to edit and long press to delete</string>
     <string name="add">Add</string>
     <string name="search">🔍Search</string>

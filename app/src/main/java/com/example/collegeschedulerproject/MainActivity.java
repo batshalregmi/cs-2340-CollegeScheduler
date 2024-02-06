@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         getSupportActionBar().setTitle("College Scheduler");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button schedule = findViewById(R.id.schedule_button);
         schedule.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Schedule.class)));
