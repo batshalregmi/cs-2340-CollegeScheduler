@@ -4,13 +4,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.lang.*;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,6 +27,8 @@ public class ExamInfo extends AppCompatActivity {
     Button addButton;
     EditText textBox;
     ArrayAdapter<String> ExamInfoAdapter;
+    EditText txtDate, txtTime;
+    private int mYear, mMonth, mDay, mHour, mMinute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,7 @@ public class ExamInfo extends AppCompatActivity {
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         ExamInfoListView = findViewById(R.id.exam_list_view);
         addButton = findViewById(R.id.exam_add_button);
+        txtTime = findViewById(R.id.btnTimePicker);
         textBox = findViewById(R.id.exam_edit_text);
         ExamInfoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ExamInfoList);
 
@@ -51,6 +60,31 @@ public class ExamInfo extends AppCompatActivity {
         ExamInfoListView.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
         });
+        txtTime.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                {
+
+                    // Get Current Time
+                    final Calendar c = Calendar.getInstance();
+                    mHour = c.get(Calendar.HOUR_OF_DAY);
+                    mMinute = c.get(Calendar.MINUTE);
+
+                    // Launch Time Picker Dialog
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(ExamInfo.this,
+                            new TimePickerDialog.OnTimeSetListener() {
+
+                                @Override
+                                public void onTimeSet(TimePicker view, int hourOfDay,
+                                                      int minute) {
+
+                                    txtTime.setText(hourOfDay + ":" + minute);
+                                }
+                            }, mHour, mMinute, false);
+                    timePickerDialog.show();
+                }
+            }
+        });
         theFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -71,6 +105,7 @@ public class ExamInfo extends AppCompatActivity {
 
     }
 
+
     private void showEditDialog(int position) {
         ExamInfoListView = findViewById(R.id.todo_list_view);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -90,5 +125,6 @@ public class ExamInfo extends AppCompatActivity {
 
         builder.show();
     }
+
 
 }

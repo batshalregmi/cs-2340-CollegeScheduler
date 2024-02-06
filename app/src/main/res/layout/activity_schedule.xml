@@ -15,11 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints="String"
-        android:background="@color/lapis"
+        android:background="@color/charcoal"
         android:hint="@string/search"
         android:textColor="#FFFFFFFF"
         android:textColorHint="#FFFFFFFF"
-
         app:layout_constraintBottom_toTopOf="@+id/schedule_list_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +92,7 @@
         android:hint="@string/added_classes_will_appear_here"
         android:textColorHint="@color/white"
         android:background="@color/lapis"
+
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

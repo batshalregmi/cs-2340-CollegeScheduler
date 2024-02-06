@@ -17,14 +17,15 @@
         android:id="@+id/searchFilter"
         android:hint="@string/search"
         android:autofillHints="String" />
+
     <ListView
         android:id="@+id/exam_list_view"
         android:layout_width="match_parent"
+        android:layout_height="374dp"
         android:layout_marginBottom="12dp"
         android:background="@color/carolina_blue"
         android:textColor="#FFFFFFFF"
-        android:textColorHint="#FFFFFFFF"
-        android:layout_height="wrap_content"/>
+        android:textColorHint="#FFFFFFFF" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,6 +45,36 @@
             android:hint="@string/examInfo_list_hint"
             android:autofillHints=""
              />
+
+        <EditText
+            android:id="@+id/btnDatePicker"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="@color/lapis"
+            android:ems="10"
+            android:hint="Date:"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/scheduleSubmitButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/scheduleProfessorBox"
+            app:layout_constraintTop_toBottomOf="@+id/scheduleCourseNumber"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <EditText
+            android:id="@+id/btnTimePicker"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:background="@color/lapis"
+            android:ems="10"
+            android:hint="Time:"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/scheduleSubmitButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/scheduleProfessorBox"
+            app:layout_constraintTop_toBottomOf="@+id/scheduleCourseNumber"
+            app:layout_constraintVertical_bias="0.5" />
 
 
         <Button
