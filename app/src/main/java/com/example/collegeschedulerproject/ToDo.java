@@ -38,7 +38,7 @@ public class ToDo extends AppCompatActivity {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
-        getSupportActionBar().setTitle("Exam Info");
+        getSupportActionBar().setTitle("To Do");
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         ToDoListView = findViewById(R.id.ToDo_list_view);
         addButton = findViewById(R.id.ToDo_add_button);

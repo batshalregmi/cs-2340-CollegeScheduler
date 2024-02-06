@@ -61,7 +61,7 @@ public class Schedule extends AppCompatActivity {
 
             } else {
                 if (!(addOrRemoveClass.isChecked())) {
-                    classListView.add("Subject: " + classSubject.getText().toString() + " " + classNumber.getText().toString() + "\nStart Time: " + classTime.getText().toString() + "\n Instructor: " + professorName.getText().toString() + "\n");
+                    classListView.add("Subject: " + classSubject.getText().toString() + classNumber.getText().toString() + "\nStart Time: " + classTime.getText().toString() + "\nInstructor: " + professorName.getText().toString());
                     classListAdapter.notifyDataSetChanged();
                 } else {
                     //remove entire row from classList if it matches the class subject and number

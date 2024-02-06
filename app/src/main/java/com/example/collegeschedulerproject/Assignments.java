@@ -39,7 +39,7 @@ public class Assignments extends AppCompatActivity {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assignments);
-        getSupportActionBar().setTitle("Exam Info");
+        getSupportActionBar().setTitle("Assignments");
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         AssignmentsListView = findViewById(R.id.Assignments_list_view);
         addButton = findViewById(R.id.Assignments_add_button);
@@ -52,7 +52,7 @@ public class Assignments extends AppCompatActivity {
             if (textBox.getText().toString().equals("")) {
                 Toast.makeText(this, "Not enough information added!", Toast.LENGTH_SHORT).show();
             } else {
-                AssignmentsList.add("Exam Name: " + textBox.getText().toString() + "\nExam Date: " + txtDate.getText().toString() + "\nTime: " +  txtTime.getText().toString());
+                AssignmentsList.add("Assignment Name: " + textBox.getText().toString() + "\nDue Date: " + txtDate.getText().toString() + "\nTime: " +  txtTime.getText().toString());
                 AssignmentsAdapter.notifyDataSetChanged();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                 imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
