@@ -5,17 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:textColor="#FFFFFFFF"
+    android:background="@color/charcoal"
     tools:context=".ToDo">
+
+    <EditText
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/lapis"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
+        android:id="@+id/searchFilter"
+        android:hint="@string/search"
+        />
     <ListView
         android:id="@+id/todo_list_view"
         android:layout_width="match_parent"
         android:layout_marginBottom="12dp"
+        android:background="@color/carolina_blue"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
         android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:layout_marginTop="12dp"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
         android:orientation="horizontal">
 
         <EditText
@@ -23,17 +40,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:hint="Enter a Task, Press a task to edit and long press to delete" />
-
-
+            android:textColor="#FFFFFFFF"
+            android:textColorHint="#FFFFFFFF"
+            android:hint="@string/activty_list_hint"/>
         <Button
             android:id="@+id/todo_add_button"
             android:layout_width="0dp"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_height="wrap_content"
+            android:background="#5392C2"
+            android:textColor="@color/white"
             android:layout_weight="1"/>
     </LinearLayout>
-
-
-
 </LinearLayout>

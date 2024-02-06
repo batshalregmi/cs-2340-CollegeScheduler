@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ABC270">
+    android:background="@color/carolina_blue">
 
 
     <TextView
@@ -27,10 +27,10 @@
         android:layout_width="103dp"
         android:layout_height="40dp"
         android:layout_marginTop="157dp"
-        android:background="#FEC868"
+        android:background="@color/lapis"
         android:fontFamily="sans-serif"
         android:text="Schedule"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/assignment_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:id="@+id/assignment_button"
         android:layout_width="103dp"
         android:layout_height="43dp"
-        android:background="#FEC868"
+        android:background="@color/lapis"
         android:text="Assignments"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="9dp"
-        android:background="#FEC868"
+        android:background="@color/lapis"
         android:text="To-Do List"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

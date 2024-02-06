@@ -26,7 +26,6 @@ public class ExamInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_info);
-//        initSearchWidgets();
         getSupportActionBar().setTitle("Exam Info");
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         ExamInfoListView = findViewById(R.id.exam_list_view);

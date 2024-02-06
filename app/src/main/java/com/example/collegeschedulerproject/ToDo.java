@@ -4,6 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +27,7 @@ public class ToDo extends AppCompatActivity {
         setContentView(R.layout.activity_to_do);
         toDoListView = findViewById(R.id.todo_list_view);
         addButton = findViewById(R.id.todo_add_button);
+        EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         textBox = findViewById(R.id.todo_edit_text);
         ToDoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, toDoList);
         getSupportActionBar().setTitle("To-Do List");
@@ -48,6 +51,23 @@ public class ToDo extends AppCompatActivity {
         toDoListView.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
         });
+        theFilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                (ToDo.this).ToDoAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
 
     }
