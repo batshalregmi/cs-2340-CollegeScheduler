@@ -2,8 +2,11 @@ package com.example.collegeschedulerproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import java.lang.*;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +26,8 @@ public class ExamInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_info);
+//        initSearchWidgets();
+        EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         ExamInfoListView = findViewById(R.id.exam_list_view);
         addButton = findViewById(R.id.exam_add_button);
         textBox = findViewById(R.id.exam_edit_text);
@@ -45,6 +50,22 @@ public class ExamInfo extends AppCompatActivity {
         });
         ExamInfoListView.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
+        });
+        theFilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                (ExamInfo.this).ExamInfoAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
         });
 
 
