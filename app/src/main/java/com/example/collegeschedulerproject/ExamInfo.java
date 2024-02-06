@@ -1,5 +1,6 @@
 package com.example.collegeschedulerproject;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.lang.*;
@@ -13,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -34,6 +36,7 @@ public class ExamInfo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_info);
         getSupportActionBar().setTitle("Exam Info");
@@ -44,7 +47,6 @@ public class ExamInfo extends AppCompatActivity {
         textBox = findViewById(R.id.exam_edit_text);
         txtDate = findViewById(R.id.btnDatePicker);
         ExamInfoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ExamInfoList);
-
         ExamInfoListView.setAdapter(ExamInfoAdapter);
         addButton.setOnClickListener(v -> {
             if (textBox.getText().toString().equals("")) {
@@ -154,7 +156,7 @@ public class ExamInfo extends AppCompatActivity {
 
 
     private void showEditDialog(int position) {
-        ExamInfoListView = findViewById(R.id.todo_list_view);
+        ExamInfoListView = findViewById(R.id.ToDo_list_view);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Edit Item");
 

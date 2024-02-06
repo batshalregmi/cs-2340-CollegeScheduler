@@ -1,5 +1,6 @@
 package com.example.collegeschedulerproject;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -36,6 +37,7 @@ public class Schedule extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
@@ -59,7 +61,7 @@ public class Schedule extends AppCompatActivity {
 
             } else {
                 if (!(addOrRemoveClass.isChecked())) {
-                    classListView.add(classSubject.getText().toString() + " " + classNumber.getText().toString() + " " + classTime.getText().toString() + " " + professorName.getText().toString() + "\n");
+                    classListView.add("Subject: " + classSubject.getText().toString() + " " + classNumber.getText().toString() + "\nStart Time: " + classTime.getText().toString() + "\n Instructor: " + professorName.getText().toString() + "\n");
                     classListAdapter.notifyDataSetChanged();
                 } else {
                     //remove entire row from classList if it matches the class subject and number
@@ -80,6 +82,7 @@ public class Schedule extends AppCompatActivity {
             classListAdapter.notifyDataSetChanged();
             return true;
         });
+        classTime.setFocusable(false);
         classList.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
         });
@@ -144,7 +147,7 @@ public class Schedule extends AppCompatActivity {
 
     }
     private void showEditDialog(int position) {
-        classList = findViewById(R.id.todo_list_view);
+        classList = findViewById(R.id.ToDo_list_view);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Edit Item");
 

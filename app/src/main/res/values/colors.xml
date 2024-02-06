@@ -3,6 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lapis">#33658A</color>
-    <color name="carolina_blue">#86BBD8</color>
-    <color name="charcoal">#2F4858</color>
+    <color name="carolina_blue">#E7D5C7</color>
+    <color name="charcoal">#E4A9A4</color>
+    <color name="intro_back">#F1CCBB</color>
+    <color name="dark">#E38265</color>
+
 </resources>

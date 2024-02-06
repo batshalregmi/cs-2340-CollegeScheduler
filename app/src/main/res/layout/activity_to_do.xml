@@ -1,55 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:textColor="#FFFFFFFF"
-    android:background="@color/charcoal"
+    android:background="@color/carolina_blue"
     tools:context=".ToDo">
 
-    <EditText
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:background="@color/lapis"
-        android:textColor="#FFFFFFFF"
-        android:textColorHint="#FFFFFFFF"
-        android:id="@+id/searchFilter"
-        android:hint="@string/search"
-        />
-    <ListView
-        android:id="@+id/todo_list_view"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="12dp"
-        android:background="@color/carolina_blue"
-        android:textColor="#FFFFFFFF"
-        android:textColorHint="#FFFFFFFF"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="12dp"
-        android:textColor="#FFFFFFFF"
-        android:textColorHint="#FFFFFFFF"
-        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/todo_edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:textColor="#FFFFFFFF"
-            android:textColorHint="#FFFFFFFF"
-            android:hint="@string/activty_list_hint"/>
-        <Button
-            android:id="@+id/todo_add_button"
-            android:layout_width="0dp"
-            android:text="@string/add"
-            android:layout_height="wrap_content"
-            android:background="#5392C2"
-            android:textColor="@color/white"
-            android:layout_weight="1"/>
-    </LinearLayout>
-</LinearLayout>
+    <EditText
+        android:id="@+id/searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:textAlignment="center"
+
+        android:layout_weight="4"
+        android:autofillHints="String"
+        android:background="@color/intro_back"
+        android:hint="@string/search"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/ToDo_list_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ListView
+        android:id="@+id/ToDo_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="271dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="124dp"
+        android:background="@color/intro_back"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/ToDo_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchFilter" />
+
+    <EditText
+        android:gravity="bottom"
+        android:id="@+id/ToDo_edit_text"
+        android:layout_width="139dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="34dp"
+        android:layout_weight="4"
+        android:hint="Enter Info"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/ToDo_add_button"
+        app:layout_constraintEnd_toStartOf="@+id/btnTimePicker"
+        app:layout_constraintStart_toEndOf="@+id/btnDatePicker"
+        app:layout_constraintTop_toBottomOf="@+id/ToDo_list_view"
+        app:layout_constraintVertical_bias="0.721" />
+
+    <EditText
+        android:id="@+id/btnDatePicker"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/roundedbutton"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="Select Date"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/ToDo_add_button"
+        app:layout_constraintEnd_toStartOf="@+id/ToDo_edit_text"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToDo_list_view" />
+
+    <EditText
+        android:id="@+id/btnTimePicker"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/roundedbutton"
+        android:ems="10"
+        android:hint="Select Time"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/ToDo_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toEndOf="@+id/ToDo_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/ToDo_list_view" />
+
+    <Button
+        android:id="@+id/ToDo_add_button"
+        android:layout_width="165dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="169dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToDo_edit_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>

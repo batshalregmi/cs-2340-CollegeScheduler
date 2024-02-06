@@ -4,29 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/carolina_blue">
 
 
     <TextView
         android:id="@+id/textview_first"
-        android:layout_width="359dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="383dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_buttom_no_color"
         android:fontFamily="@font/roboto_black"
-        android:text="@string/welcome_message"
+        android:gravity="center"
         android:textAlignment="center"
+        android:paddingLeft="4dp"
+        android:paddingEnd="3dp"
+        android:paddingRight="2dp"
+        android:text="@string/welcome_message"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/schedule_button"
         android:layout_width="103dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="157dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="90dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/roboto_black"
         android:text="Schedule"
@@ -35,12 +41,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_first"
+        app:layout_constraintVertical_bias="0.49" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/assignment_button"
         android:layout_width="103dp"
-        android:layout_height="43dp"
+        android:layout_height="50dp"
         android:background="@drawable/roundedbutton"
         android:text="Assignments"
         android:fontFamily="@font/roboto_black"
@@ -53,8 +60,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/todo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/roundedbutton"
         android:text="To-Do List"
@@ -68,10 +75,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/examinfo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_black"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
         android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/roboto_black"
         android:text="Exam Info"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
