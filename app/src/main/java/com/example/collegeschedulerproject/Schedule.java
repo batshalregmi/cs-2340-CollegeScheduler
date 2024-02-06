@@ -2,14 +2,20 @@ package com.example.collegeschedulerproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.Dialog;
+import android.app.TimePickerDialog;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -21,7 +27,7 @@ public class Schedule extends AppCompatActivity {
     ListView classList;
     EditText classSubject;
     EditText classNumber;
-    EditText classTime;
+    Button classTime;
     EditText professorName;
     ToggleButton addOrRemoveClass;
     Button submit;
@@ -65,7 +71,6 @@ public class Schedule extends AppCompatActivity {
                 }
                 classSubject.getText().clear();
                 classNumber.getText().clear();
-                classTime.getText().clear();
                 professorName.getText().clear();
             }
         });
@@ -77,6 +82,13 @@ public class Schedule extends AppCompatActivity {
         classList.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
         });
+
+        classTime.setOnClickListener(l -> {
+            new TimePickerFragment().show(getSupportFragmentManager(), "timePicker");
+            //override onTimeSet
+        });
+
+
         theFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -116,4 +128,24 @@ public class Schedule extends AppCompatActivity {
 
         builder.show();
     }
+    public static class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker.
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it.
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            // Do something with the time the user picks.
+        }
+    }
+
 }
