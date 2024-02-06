@@ -1,5 +1,6 @@
 package com.example.collegeschedulerproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -68,6 +69,14 @@ public class Schedule extends AppCompatActivity {
                 professorName.getText().clear();
             }
         });
+        classList.setOnItemLongClickListener((parent, view, position, id) -> {
+            classListView.remove(position);
+            classListAdapter.notifyDataSetChanged();
+            return true;
+        });
+        classList.setOnItemClickListener((parent, view, position, id) -> {
+            showEditDialog(position);
+        });
         theFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -83,7 +92,28 @@ public class Schedule extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
+
         });
 
+
+    }
+    private void showEditDialog(int position) {
+        classList = findViewById(R.id.todo_list_view);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Edit Item");
+
+        EditText editText = new EditText(this);
+        editText.setText(classListView.get(position));
+        builder.setView(editText);
+
+        builder.setPositiveButton("Save", (dialog, which) -> {
+            classListView.set(position, editText.getText().toString());
+            classListAdapter.notifyDataSetChanged();
+            dialog.dismiss();
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+        builder.show();
     }
 }
