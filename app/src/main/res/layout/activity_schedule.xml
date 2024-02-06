@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.5"
         app:layout_constraintVertical_chainStyle="spread" />
 
-    <Button
+    <EditText
         android:id="@+id/scheduleTime"
         android:layout_width="160dp"
         android:layout_height="40dp"

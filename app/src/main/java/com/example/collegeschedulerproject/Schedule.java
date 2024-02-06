@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ public class Schedule extends AppCompatActivity {
     ListView classList;
     EditText classSubject;
     EditText classNumber;
-    Button classTime;
+    EditText classTime;
     EditText professorName;
     ToggleButton addOrRemoveClass;
     Button submit;
@@ -82,10 +83,43 @@ public class Schedule extends AppCompatActivity {
         classList.setOnItemClickListener((parent, view, position, id) -> {
             showEditDialog(position);
         });
+        classTime.setOnClickListener(new View.OnClickListener() {
+            private int mYear, mMonth, mDay, mHour, mMinute;
 
-        classTime.setOnClickListener(l -> {
-            new TimePickerFragment().show(getSupportFragmentManager(), "timePicker");
-            //override onTimeSet
+            @Override
+            public void onClick(View v) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+
+                TimePickerDialog mTimePicker;
+                final Calendar c = Calendar.getInstance();
+                mHour = c.get(Calendar.HOUR_OF_DAY);
+                mMinute = c.get(Calendar.MINUTE);
+
+                // Launch Time Picker Dialog
+                TimePickerDialog timePickerDialog = new TimePickerDialog(Schedule.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+                                //convert to 12hr time
+                                if (hourOfDay > 12) {
+                                    hourOfDay = hourOfDay - 12;
+                                    classTime.setText(hourOfDay + ":" + minute + " PM");
+                                } else if (hourOfDay == 0) {
+                                    hourOfDay = 12;
+                                    classTime.setText(hourOfDay + ":" + minute + " AM");
+                                } else if (hourOfDay == 12) {
+                                    classTime.setText(hourOfDay + ":" + minute + " PM");
+                                } else {
+                                    classTime.setText(hourOfDay + ":" + minute + " AM");
+                                }
+                            }
+                        }, mHour, mMinute, false);
+                timePickerDialog.show();
+            }
         });
 
 
@@ -128,24 +162,6 @@ public class Schedule extends AppCompatActivity {
 
         builder.show();
     }
-    public static class TimePickerFragment extends DialogFragment
-            implements TimePickerDialog.OnTimeSetListener {
 
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the current time as the default values for the picker.
-            final Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            int minute = c.get(Calendar.MINUTE);
-
-            // Create a new instance of TimePickerDialog and return it.
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-        }
-
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            // Do something with the time the user picks.
-        }
-    }
 
 }
