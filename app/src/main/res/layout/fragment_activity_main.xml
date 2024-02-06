@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/schedule_button"
         android:layout_width="103dp"
         android:layout_height="40dp"
@@ -38,11 +38,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_first" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/assignment_button"
         android:layout_width="103dp"
         android:layout_height="43dp"
-        android:background="@color/lapis"
+        android:background="@color/charcoal"
         android:text="Assignments"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -52,12 +52,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/schedule_button" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/todo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="9dp"
-        android:background="@color/lapis"
+        android:background="@color/charcoal"
         android:text="To-Do List"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -67,11 +67,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assignment_button" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/examinfo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FEC868"
+        android:background="@color/charcoal"
         android:text="Exam Info"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

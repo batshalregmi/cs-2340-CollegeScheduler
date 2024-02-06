@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Schedule">
 
+    <EditText
+        android:id="@+id/searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="String"
+        android:background="@color/lapis"
+        android:hint="@string/search"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/schedule_list_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/scheduleSubmitButton"
         android:layout_width="wrap_content"
@@ -13,8 +27,7 @@
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scheduleToggleButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleTime"
         app:layout_constraintVertical_bias="0.5" />
 
@@ -25,13 +38,10 @@
         android:text="ToggleButton"
         android:textOff="Add Class"
         android:textOn="Delete Class"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scheduleSubmitButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleProfessorBox"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/scheduleSubjectTextBox"
@@ -67,11 +77,12 @@
         android:id="@+id/schedule_list_view"
         android:layout_width="412dp"
         android:layout_height="311dp"
+        android:layout_marginTop="48dp"
         android:hint="@string/added_classes_will_appear_here"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,13 +107,12 @@
         android:ems="10"
         android:hint="Professor Name"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/scheduleToggleButton"
+        app:layout_constraintBottom_toTopOf="@+id/scheduleSubmitButton"
         app:layout_constraintEnd_toStartOf="@+id/scheduleTime"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleSubjectTextBox"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleSubjectTextBox" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"

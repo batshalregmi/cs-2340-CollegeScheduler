@@ -8,7 +8,6 @@
     android:textColor="#FFFFFFFF"
     android:background="@color/charcoal"
     tools:context=".ExamInfo">
-
     <EditText
         android:layout_height="50dp"
         android:layout_width="match_parent"

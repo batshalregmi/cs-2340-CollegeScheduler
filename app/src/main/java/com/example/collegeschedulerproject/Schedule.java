@@ -3,6 +3,8 @@ package com.example.collegeschedulerproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +34,7 @@ public class Schedule extends AppCompatActivity {
         classList = findViewById(R.id.schedule_list_view);
         classSubject = findViewById(R.id.scheduleSubjectTextBox);
         classNumber = findViewById(R.id.scheduleCourseNumber);
+        EditText theFilter = (EditText) findViewById(R.id.searchFilter);
         classTime = findViewById(R.id.scheduleTime);
         professorName = findViewById(R.id.scheduleProfessorBox);
         addOrRemoveClass = findViewById(R.id.scheduleToggleButton);
@@ -65,5 +68,22 @@ public class Schedule extends AppCompatActivity {
                 professorName.getText().clear();
             }
         });
+        theFilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                (Schedule.this).classListAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 }
