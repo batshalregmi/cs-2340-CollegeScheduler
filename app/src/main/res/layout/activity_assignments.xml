@@ -5,32 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:textColor="#FFFFFFFF"
+    android:background="@color/charcoal"
     tools:context=".Assignments">
+
+    <EditText
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/lapis"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
+        android:id="@+id/searchFilter"
+        android:hint="🔍Search..."
+        />
+
     <ListView
-        android:id="@+id/todo_list_view"
+        android:id="@+id/Assignments_list_view"
         android:layout_width="match_parent"
         android:layout_marginBottom="12dp"
+        android:background="@color/carolina_blue"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
         android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:layout_marginTop="12dp"
+        android:textColor="#FFFFFFFF"
+        android:textColorHint="#FFFFFFFF"
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/todo_edit_text"
+            android:id="@+id/Assignments_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:hint="Enter an Assignment, Press an assignment to edit and long press to delete" />
+            android:hint="Enter an Assignment, Press an assignment to edit and long press to delete"
+            android:textColorHint="#FFFFFFFF"
+            android:textColor="#FFFFFFFF"
+            />
 
 
         <Button
-            android:id="@+id/todo_add_button"
+            android:id="@+id/Assignments_add_button"
             android:layout_width="0dp"
             android:text="Add"
             android:layout_height="wrap_content"
+            android:background="#5392C2"
+            android:textColor="@color/white"
             android:layout_weight="1"/>
     </LinearLayout>
 
